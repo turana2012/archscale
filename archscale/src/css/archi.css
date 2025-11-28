@@ -3,7 +3,53 @@ html {
     -ms-text-size-adjust: 100%;
     font-family: sans-serif
 }
+.all-pages {
+  display: none;
+}
 
+.pages-toggle-button {
+  z-index: 1000;
+  background-color: var(--black);
+  color: var(--light-brown);
+  cursor: pointer;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  font-size: 1.125rem;
+  line-height: 1;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 1.5rem;
+  right: 1.5rem;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.2);
+}
+
+/* === Скрытый блок Pages === */
+.all-pages {
+  z-index: 999;
+  background-color: var(--black);
+  backdrop-filter: blur(20px);
+  padding: 1.5rem;
+  display: none; /* изначально скрыт */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.all-pages.active {
+  display: block;
+}
+
+/* Анимация стрелки */
+.pages-arrow {
+  transition: transform 0.3s ease;
+}
 body {
     margin: 0
 }
